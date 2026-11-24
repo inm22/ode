@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ode Tableware | Redesigned Chopsticks, Available Soon</title>
+<meta name="description" content="Redesigned chopsticks from Ode Tableware. Sign up to hear when they are available in your area.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500&family=Work+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --glaze: #dfe6e3;      /* celadon-grey background */
+    --porcelain: #f7f8f6;  /* form surface */
+    --ink: #1f2a30;        /* text */
+    --slate: #55646b;      /* secondary text */
+    --indigo: #2c4a6b;     /* buttons, focus */
+    --line: #b9c5c1;
+    --error: #9b2c2c;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-padding-top: 1rem; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--glaze);
+    color: var(--ink);
+    font-family: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+  main { width: 100%; max-width: 34rem; }
+
+  /* Logo area: replace the placeholder with your <img> (see comment in HTML) */
+  .logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+  .logo img { display: block; max-width: 12rem; max-height: 6rem; height: auto; }
+  .logo-placeholder {
+    width: 12rem; height: 6rem;
+    border: 1.5px dashed var(--slate);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    color: var(--slate);
+    font-size: .9rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-family: "Fraunces", Georgia, "Times New Roman", serif;
+    font-weight: 300;
+    font-size: clamp(2.6rem, 9vw, 4.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 1.25rem;
+    text-align: center;
+  }
+  .lede {
+    text-align: center;
+    color: var(--slate);
+    max-width: 28rem;
+    margin: 0 auto 2.5rem;
+  }
+
+  form {
+    background: var(--porcelain);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.75rem 1.5rem 1.5rem;
+  }
+  h2 {
+    font-family: "Fraunces", Georgia, serif;
+    font-weight: 500;
+    font-size: 1.35rem;
+    margin: 0 0 1.25rem;
+  }
+  .field { margin-bottom: 1.1rem; }
+  label { display: block; font-weight: 500; font-size: .95rem; margin-bottom: .3rem; }
+  .hint { font-weight: 400; color: var(--slate); }
+  input[type="text"], input[type="email"] {
+    width: 100%;
+    font: inherit;
+    padding: .7rem .8rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: #fff;
+    color: var(--ink);
+  }
+  input:focus-visible, button:focus-visible {
+    outline: 3px solid var(--indigo);
+    outline-offset: 2px;
+  }
+  .consent {
+    display: flex; gap: .6rem; align-items: flex-start;
+    margin: 1.4rem 0 1.4rem;
+    font-size: .9rem; color: var(--slate);
+  }
+  .consent input { margin-top: .3rem; accent-color: var(--indigo); }
+  .consent label { font-weight: 400; font-size: .9rem; margin: 0; }
+
+  button {
+    width: 100%;
+    font: inherit; font-weight: 500;
+    padding: .85rem 1rem;
+    border: 0; border-radius: 4px;
+    background: var(--indigo); color: #fff;
+    cursor: pointer;
+  }
+  button:hover { background: #223a54; }
+  button:disabled { opacity: .6; cursor: wait; }
+
+  .status { margin: 1rem 0 0; font-size: .95rem; min-height: 1.4em; }
+  .status.error { color: var(--error); }
+  .status.ok { color: var(--indigo); font-weight: 500; }
+
+  .disclaimer {
+    margin: 1.25rem 0 0;
+    font-size: .82rem;
+    color: var(--slate);
+    line-height: 1.5;
+  }
+  .hp { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+  footer { margin-top: 2.5rem; font-size: .85rem; color: var(--slate); text-align: center; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    button { transition: background .15s ease; }
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <!-- LOGO: delete the .logo-placeholder div and uncomment the <img> line below.
+       Put your logo file in the repo (e.g. logo.png) and update the src. -->
+  <div class="logo">
+    <!-- <img src="logo.png" alt="Ode Tableware logo"> -->
+    <div class="logo-placeholder">Your logo here</div>
+  </div>
+
+  <h1>Redesigned chopsticks, available soon</h1>
+  <p class="lede">Ode Tableware is rethinking a tool you use every day. Leave your details and we will tell you when it reaches your area.</p>
+
+  <!-- FORM: replace YOUR_FORM_ID with your Formspree form ID (see setup notes). -->
+  <form id="signup" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <h2>Get availability updates</h2>
+
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" autocomplete="name" required>
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" autocomplete="email" required>
+    </div>
+
+    <div class="field">
+      <label for="area">City, state or ZIP code <span class="hint">(so we know where to notify you)</span></label>
+      <input type="text" id="area" name="area" autocomplete="postal-code" required>
+    </div>
+
+    <!-- Honeypot field to reduce spam; real visitors never see it -->
+    <div class="hp" aria-hidden="true">
+      <label for="website">Leave this empty</label>
+      <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+    </div>
+
+    <div class="consent">
+      <input type="checkbox" id="consent" name="consent" value="yes" required>
+      <label for="consent">I agree to be contacted about product availability in my area.</label>
+    </div>
+
+    <button type="submit" id="submit">Notify me</button>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+
+    <p class="disclaimer">
+      The information you provide will only be used to send updates about the availability of Ode Tableware products in your area. We will not use it for any other purpose.
+    </p>
+  </form>
+
+  <footer>&copy; <span id="year"></span> Ode Tableware</footer>
+</main>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  var form = document.getElementById("signup");
+  var statusEl = document.getElementById("status");
+  var btn = document.getElementById("submit");
+
+  function setStatus(msg, kind) {
+    statusEl.textContent = msg;
+    statusEl.className = "status " + (kind || "");
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    setStatus("");
+
+    if (!form.checkValidity()) {
+      var firstBad = form.querySelector(":invalid");
+      setStatus("Please fill in every field and tick the agreement box.", "error");
+      if (firstBad) firstBad.focus();
+      return;
+    }
+    if (form.action.indexOf("YOUR_FORM_ID") !== -1) {
+      setStatus("The form is not connected yet. Add your Formspree form ID to the page.", "error");
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = "Sending";
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form),
+      headers: { "Accept": "application/json" }
+    }).then(function (res) {
+      if (res.ok) {
+        form.reset();
+        setStatus("Thank you. We will email you when Ode chopsticks are available in your area.", "ok");
+      } else {
+        setStatus("Something went wrong and your details were not sent. Please try again.", "error");
+      }
+    }).catch(function () {
+      setStatus("We could not reach the server. Check your connection and try again.", "error");
+    }).finally(function () {
+      btn.disabled = false;
+      btn.textContent = "Notify me";
+    });
+  });
+</script>
+</body>
+</html>
